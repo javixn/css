@@ -1,0 +1,189 @@
+body{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-color: #5ab2ff;
+}
+.contenedor_logo{
+    /*Contenedor para realizar el hover de los logos*/
+    position: fixed;
+    bottom: 0%;
+    right: 34%;
+    height: 300px;
+    width: 500px;
+    cursor: pointer;
+}
+
+.contenedor_logo .bottom,
+.contenedor_logo .up{
+      position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.contenedor_logo .up{
+    opacity: 0;
+}
+
+.contenedor_logo:hover .bottom{
+    opacity: 0;
+}
+.contenedor_logo:hover .up{
+    opacity: 1;
+}
+.avioncito{
+    position: absolute;
+    top: 100%;
+    height: 200px;
+    width: auto;
+    right: 15%;
+    object-fit: cover;
+    animation: avion 10s ease-in-out infinite;
+    z-index: 4;
+}
+@keyframes avion {
+    0%{transform: translateX(100%);}
+    30%{transform: translateX(80%);}
+    40%{transform: translateY(-80%);}
+    50%{transform: translateY(-90%);}
+    60%{transform: translate(-100%,-90%);}
+    90%{transform: translate(-350%,-90%);}
+    100%{transform: translate(-400%,-90%);}
+}
+.cloud{
+    position: absolute;
+    animation: moverNube ease-in-out infinite;
+}
+
+.small {
+    position: absolute;
+    top: 15px;
+    left: -260PX;
+    animation-duration: 30s;
+}
+
+.med {
+    top: 15px;
+    left: -240PX;
+    animation-duration: 40s;
+}
+.large{
+    top: 15px;
+    left: -230PX;
+    animation-duration: 50s;
+}
+
+@keyframes moverNube {
+    0%{
+        transform: translateX(1500px);
+    }
+    100%{
+        transform: translateX(-1500px);
+    }
+    
+}
+.ballon{
+    position: relative;
+    top: 50%;
+    left: 150px;
+    animation: moverbalon 20s ease-in-out infinite;
+}
+@keyframes moverbalon {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-400%);
+    }
+    
+}
+.keg{
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    left: 500px;
+    animation: kegDrift 10s linear infinite;
+}
+@keyframes kegDrift {
+    0%{
+        transform: translateY(300px);
+
+    }
+    100%{
+        transform: translateY(-350px) ;
+
+    }
+    
+}
+.sol {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    width: 200px;
+    height: auto;
+    transform-origin: 50% 50%;
+    animation: girarSol 3s infinite alternate, solecito infinite;
+    cursor: pointer;
+}
+.sol:hover{
+    animation-name:solecito;
+    animation-duration: 3000ms;
+    transform-origin: 50% 50%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes solecito {
+    0%{ transform: scale(1);}
+    30%{ transform: scale(1);}
+    40%{ transform: scale(1.08);}
+    50%{transform: scale(1);}
+    60%{transform: scale(1);}
+    70%{transform: scale(1.05);}
+    80%{transform: scale(1);}
+    90%{transform: scale(1.05);}
+    100%{ transform: scale(1);}
+    
+}
+@keyframes girarSol {
+    0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(140deg);
+  }
+    
+}
+.stand-blades {
+    position: fixed;
+    bottom: 0px;
+}
+.stand {
+    position: absolute;
+    bottom: -2%;
+    right: -200%;
+}
+
+.blades {
+    position: relative;
+    right: -245%;
+    animation: girarSol 10s linear infinite; /*Utilice la misma animacion del sol, pero se puede igual crear una nueva para este y sera el mismo funcionamiento*/
+}
+.logo{
+    position: fixed;
+    left: 60px;
+    bottom: 45px;
+    cursor: pointer;
+}
+.logo:hover{
+    animation-name:solecito; /*Volvi a reutilizar una animacion creada anteriormente aca, de igual manera se puede crear una especifica para esta y seria lo mismo*/
+    animation-duration: 3000ms;
+    transform-origin: 50% 50%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
